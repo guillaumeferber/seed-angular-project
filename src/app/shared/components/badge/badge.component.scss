@@ -1,0 +1,27 @@
+$status-list: (
+  "warning": orange,
+  "error": rgb(209, 58, 58),
+  "success": rgb(129, 180, 77),
+  "primary": rgb(6, 114, 177),
+  "secondary": rgb(0, 159, 253),
+  "new": rgb(220, 0, 78),
+  "info": rgb(91, 192, 222)
+);
+
+@each $status, $color in $status-list {
+  .c-badge--#{$status} {
+    $font-color: if(lightness($color) > 70, #212529,  #fff);
+    background: $color;
+    color: $font-color;
+  }
+}
+
+.c-badge {
+  display: inline-block;
+  text-align: center;
+  padding: 4px 10px;
+  font-size: small;
+  &--first { border-radius: 16px 0 0 16px }
+  &--last { border-radius: 0 16px 16px 0 }
+  &--rounded { border-radius: 16px }
+}

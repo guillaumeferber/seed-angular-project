@@ -1,0 +1,9 @@
+<span [ngClass]="[
+'c-badge',
+'c-badge--' + type,
+(first ? 'c-badge--first' : ''),
+(last ? 'c-badge--last' : ''),
+(rounded ? 'c-badge--rounded' : '')
+]">
+  <ng-content></ng-content>
+</span>

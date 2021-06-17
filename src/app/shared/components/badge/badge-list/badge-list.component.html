@@ -1,0 +1,8 @@
+<ng-container *ngFor="let badge of list; first as first$; last as last$">
+  <app-badge
+  [type]="badge.color"
+  [rounded]="list.length === 1"
+  [first]="list.length > 1 && first$"
+  [last]="list.length > 1 && last$"
+  >{{badge.value}}</app-badge>
+</ng-container>

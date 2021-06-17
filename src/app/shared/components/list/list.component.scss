@@ -1,0 +1,36 @@
+.c-list {
+  padding: 1rem 0 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+
+  &-options {
+    --height: 26rem;
+    --background-image: none;
+    --overlay-diplay: none;
+    height: var(--height);
+    min-height: var(--height);
+    overflow-y: scroll;
+
+    /* overlay at the bottom: the list is entirely visible*/
+    &:after {
+      display: var(--overlay-diplay);
+      content: '';
+      height: 5rem;
+      position: fixed;
+      bottom: 3vh;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background-image: var(--background-image);
+    }
+
+    &--full-page {
+      --height: 80vh;
+      --background-image: linear-gradient(to bottom, transparent, #fff 40%);
+      --overlay-diplay: block;
+    }
+  }
+}
